@@ -1,0 +1,24 @@
+<div>
+  <button
+    mat-raised-button
+    color="accent"
+    routerLink="/group/{{ expense.groupId }}"
+  >
+    Back
+  </button>
+
+  <div>
+    <h3>Expense Details</h3>
+    <p>{{ expense.description }}</p>
+    <p>Amount: {{ expense.amount }}</p>
+    <p *ngIf="!expense.paid">You owe: {{ expense.amountOwed }}</p>
+    <button
+      mat-raised-button
+      color="primary"
+      *ngIf="!expense.paid"
+      (click)="payExpense()"
+    >
+      Pay
+    </button>
+  </div>
+</div>

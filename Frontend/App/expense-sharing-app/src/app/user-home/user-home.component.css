@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Gap between sections */
+    padding: 20px;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Gap between cards in the same section */
+  }
+  
+  .card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust width as needed */
+  }
+  
+  .group-card,
+  .expense-card {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px; /* Spacing between cards */
+    cursor: pointer;
+  }
+  
+  .group-card:hover,
+  .expense-card:hover {
+    background-color: #e0e0e0; /* Hover effect */
+  }
+  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .expense-card button,
+  .group-card button {
+    margin-top: 10px; /* Spacing above the button */
+  }
+  
+  button {
+    width: 100%; /* Full width button */
+  }
+  
+  

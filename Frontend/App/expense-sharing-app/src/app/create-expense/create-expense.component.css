@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .form-container {
+    width: 300px; /* Width of the form */
+    padding: 20px; /* Padding inside the form */
+    background-color: #ffffff; /* Background color of the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift effect */
+  }
+  
+  mat-form-field {
+    width: 100%; /* Full width within the form container */
+    margin-bottom: 15px; /* Spacing between form fields */
+  }
+  
+  button[type="submit"] {
+    width: 100%; /* Full width button */
+    margin-top: 15px; /* Spacing above the button */
+  }

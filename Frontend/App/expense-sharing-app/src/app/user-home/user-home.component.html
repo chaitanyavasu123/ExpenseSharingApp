@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="section">
+    <div class="card">
+      <p>Hi "{{ member.name }}"</p>
+      <P>Amount Owed : {{ member.amountOwed }}</P>
+      <P>Amount Owed to : {{ member.amountOwedTo }}</P>
+    </div>
+    <div class="card">
+      <button mat-raised-button color="primary" routerLink="/create-group">
+        Create Group
+      </button>
+    </div>
+    <div class="card">
+      <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="card">
+      <h3>Groups Present</h3>
+      <div
+        *ngFor="let group of groups"
+        class="group-card"
+        (click)="navigateToGroup(group.groupId)"
+      >
+        <div class="card-content">
+          <h4>{{ group.name }}</h4>
+          <p>{{ group.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Expenses Need to Pay</h3>
+      <div *ngFor="let expense of unpaidExpenses" class="expense-card">
+        <div
+          class="card-content"
+          *ngIf="member.userId !== expense.expense.paidById"
+        >
+          <!-- <p>{{ expense.expenseShareId }}</p> -->
+          <p>
+            {{ expense.expense.description }} - {{ expense.shareAmount }} USD
+          </p>
+          <p>You have Owed user {{ expense.expense.paidById }}</p>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="payExpense(expense.expenseShareId)"
+          >
+            Pay
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Groups to Join</h3>
+      <div *ngFor="let group of groupsNotIn" class="group-card">
+        <div class="card-content">
+          <h4>{{ group.name }}</h4>
+          <p>{{ group.description }}</p>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="joinGroup(group.groupId)"
+          >
+            Join
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

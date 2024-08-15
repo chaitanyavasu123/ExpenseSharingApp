@@ -1,0 +1,17 @@
+<button
+  mat-raised-button
+  color="primary"
+  routerLink="/login"
+  class="login-button"
+>
+  Login
+</button>
+<div class="container">
+  <div *ngFor="let group of groups" class="group-card mat-elevation-z2">
+    <div class="group-details">
+      <h3>{{ group.name }}</h3>
+      <p>{{ group.description }}</p>
+      <button mat-raised-button color="accent" class="join-button">Join</button>
+    </div>
+  </div>
+</div>

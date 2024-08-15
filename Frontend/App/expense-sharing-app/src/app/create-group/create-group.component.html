@@ -1,0 +1,30 @@
+<button mat-raised-button color="accent" routerLink="/user-home">Back</button>
+
+<div class="container">
+  <form class="form-container" (ngSubmit)="onSubmit()" [formGroup]="groupForm">
+    <mat-form-field>
+      <mat-label>Group Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="groupForm.controls['name'].invalid"
+        >Group name is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description" />
+      <mat-error *ngIf="groupForm.controls['description'].invalid"
+        >Description is required</mat-error
+      >
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="groupForm.invalid"
+    >
+      Create Group
+    </button>
+  </form>
+</div>

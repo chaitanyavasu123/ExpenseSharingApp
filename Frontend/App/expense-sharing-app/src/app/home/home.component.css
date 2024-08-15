@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-centre; /* Align items to the right side */
+    padding: 20px;
+  }
+  
+  .login-button {
+    margin-bottom: 20px; /* Adds space below the Login button */
+  }
+  
+  .group-card {
+    width: 300px; /* Set a fixed width for each group card */
+    margin-left: 20px; /* Adds space between group cards */
+    background-color: #ffffff; /* Background color of the group card */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside the group card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift effect */
+  }
+  
+  .group-details {
+    text-align: left; /* Align text content to the left within the group card */
+  }
+  
+  .join-button {
+    margin-top: 10px; /* Adds space above the Join button */
+  }
+  

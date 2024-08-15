@@ -1,0 +1,51 @@
+<div class="container">
+  <button mat-raised-button color="accent" routerLink="/user-home">Back</button>
+
+  <div *ngIf="group" class="group-info">
+    <h2>{{ group.name }}</h2>
+    <p>{{ group.description }}</p>
+    <p>Cretaed By :{{ group.createdBy.name }}</p>
+  </div>
+
+  <div class="cards-container">
+    <div class="card">
+      <h3>Members</h3>
+      <ul>
+        <li *ngFor="let member of group.members">
+          <p>{{ member.user.name }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Expenses</h3>
+      <ul>
+        <li *ngFor="let expense of group.expenses">
+          {{ expense.description }} - {{ expense.amount | currency }}
+          <P>paid by "{{ expense.paidBy.name }}"</P>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="navigateToCreateExpense(group.groupId)"
+    >
+      Create Expense
+    </button>
+    <button mat-raised-button color="warn" (click)="exitGroup(group.groupId)">
+      Exit Group
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      *ngIf="user == group.createdById"
+      (click)="deleteGroup(group.groupId)"
+    >
+      Delete Group
+    </button>
+  </div>
+</div>
